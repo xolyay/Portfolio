@@ -7,6 +7,8 @@
 @import url('https://fonts.googleapis.com/css2? family = Raleway: wght @ 100; 400; 700 & display = swap');
 //Imports
 @import "./mixins";
+
+
 //colores
 $white: #fff;
 $color-primary: #CDC5B4;
@@ -130,15 +132,18 @@ $color-primary: #CDC5B4;
       }
     }
     &__cards{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* todas las columnas en menos de 260 px*/
+        grid-gap: 2rem;
+        
         padding-top: 80px;
         padding-bottom: 40px;
+
+        
         
     }
     &__card{
-        width: 30%;
+        
         height: 400px;
         display: flex;
         flex-direction: column;
@@ -199,4 +204,34 @@ $color-primary: #CDC5B4;
             
         }
     }
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+   
+    .more-info{
+
+       max-width: 80%;
+       flex:center;
+       justify-content: center;
+  }
+
+  .gallery{
+      display:flex;
+      flex-direction: column;
+
+  }
+
+  .footer{
+    &__content{
+    display: flex;
+    flex-direction: column;
+    }
+  }
+  .nav {
+      display: flex;
+      justify-content: center;
+  }
 }
